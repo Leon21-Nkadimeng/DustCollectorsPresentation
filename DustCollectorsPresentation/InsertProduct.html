@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<button id="btnModal">Click me</button>
+
+<div id="myModal" class="modal" style="display:none;z-index:1;position:fixed;top:0;left:0;">
+	<h1>Pop up</h1>
+</div>
+
+<script>
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("btnModal");
+
+btn.onclick = function() {
+	modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+	if(event.target == modal){
+		modal.style.display = "none";
+	}
+}
+</script>
+
+</body>
+</html>
