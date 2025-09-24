@@ -12,7 +12,10 @@ namespace DustCollectorsPresentation
         Service1Client client = new Service1Client();
         dynamic shoes; 
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
+            if (Session["UserType"] == null || !Session["UserType"].Equals("admin"))
+                Response.Redirect("index.aspx");
+
             if (Request.QueryString["availability"] != null)
             {
                 if (Request.QueryString["availability"].Equals("available"))

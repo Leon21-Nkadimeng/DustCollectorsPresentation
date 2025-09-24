@@ -29,9 +29,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         private DustCollectorsPresentation.ServiceReference1.CustomerDeliveryAddress[] CustomerDeliveryAddressesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DustCollectorsPresentation.ServiceReference1.CustomerOrder[] CustomerOrdersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DateRegisteredField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -42,6 +39,9 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DustCollectorsPresentation.ServiceReference1.Invoice[] InvoicesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsActiveField;
@@ -95,19 +95,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DustCollectorsPresentation.ServiceReference1.CustomerOrder[] CustomerOrders {
-            get {
-                return this.CustomerOrdersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerOrdersField, value) != true)) {
-                    this.CustomerOrdersField = value;
-                    this.RaisePropertyChanged("CustomerOrders");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime DateRegistered {
             get {
                 return this.DateRegisteredField;
@@ -155,6 +142,19 @@ namespace DustCollectorsPresentation.ServiceReference1 {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DustCollectorsPresentation.ServiceReference1.Invoice[] Invoices {
+            get {
+                return this.InvoicesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoicesField, value) != true)) {
+                    this.InvoicesField = value;
+                    this.RaisePropertyChanged("Invoices");
                 }
             }
         }
@@ -362,10 +362,10 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         private int CustomerIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DustCollectorsPresentation.ServiceReference1.CustomerOrder[] CustomerOrdersField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        private DustCollectorsPresentation.ServiceReference1.Invoice[] InvoicesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsActiveField;
@@ -441,19 +441,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DustCollectorsPresentation.ServiceReference1.CustomerOrder[] CustomerOrders {
-            get {
-                return this.CustomerOrdersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerOrdersField, value) != true)) {
-                    this.CustomerOrdersField = value;
-                    this.RaisePropertyChanged("CustomerOrders");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
                 return this.IdField;
@@ -462,6 +449,19 @@ namespace DustCollectorsPresentation.ServiceReference1 {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DustCollectorsPresentation.ServiceReference1.Invoice[] Invoices {
+            get {
+                return this.InvoicesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoicesField, value) != true)) {
+                    this.InvoicesField = value;
+                    this.RaisePropertyChanged("Invoices");
                 }
             }
         }
@@ -582,9 +582,9 @@ namespace DustCollectorsPresentation.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerOrder", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Invoice", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors")]
     [System.SerializableAttribute()]
-    public partial class CustomerOrder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -599,16 +599,16 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DeliveryFeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DustCollectorsPresentation.ServiceReference1.Invoice[] InvoicesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DustCollectorsPresentation.ServiceReference1.OrderItem OrderItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ShippingAddressIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal SubtotalField;
@@ -620,7 +620,7 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         private decimal TotalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal VATPercentageField;
+        private decimal VATField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -672,6 +672,19 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal DeliveryFee {
+            get {
+                return this.DeliveryFeeField;
+            }
+            set {
+                if ((this.DeliveryFeeField.Equals(value) != true)) {
+                    this.DeliveryFeeField = value;
+                    this.RaisePropertyChanged("DeliveryFee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
                 return this.IdField;
@@ -685,32 +698,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DustCollectorsPresentation.ServiceReference1.Invoice[] Invoices {
-            get {
-                return this.InvoicesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InvoicesField, value) != true)) {
-                    this.InvoicesField = value;
-                    this.RaisePropertyChanged("Invoices");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DustCollectorsPresentation.ServiceReference1.OrderItem OrderItem {
-            get {
-                return this.OrderItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrderItemField, value) != true)) {
-                    this.OrderItemField = value;
-                    this.RaisePropertyChanged("OrderItem");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int ShippingAddressID {
             get {
                 return this.ShippingAddressIDField;
@@ -719,6 +706,19 @@ namespace DustCollectorsPresentation.ServiceReference1 {
                 if ((this.ShippingAddressIDField.Equals(value) != true)) {
                     this.ShippingAddressIDField = value;
                     this.RaisePropertyChanged("ShippingAddressID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
                 }
             }
         }
@@ -763,14 +763,14 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal VATPercentage {
+        public decimal VAT {
             get {
-                return this.VATPercentageField;
+                return this.VATField;
             }
             set {
-                if ((this.VATPercentageField.Equals(value) != true)) {
-                    this.VATPercentageField = value;
-                    this.RaisePropertyChanged("VATPercentage");
+                if ((this.VATField.Equals(value) != true)) {
+                    this.VATField = value;
+                    this.RaisePropertyChanged("VAT");
                 }
             }
         }
@@ -1681,224 +1681,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
                     this.ProductsField = value;
                     this.RaisePropertyChanged("Products");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderItem", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors")]
-    [System.SerializableAttribute()]
-    public partial class OrderItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DustCollectorsPresentation.ServiceReference1.CustomerOrder CustomerOrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ItemNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int QTYField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal TotalPriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal UnitPriceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DustCollectorsPresentation.ServiceReference1.CustomerOrder CustomerOrder {
-            get {
-                return this.CustomerOrderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerOrderField, value) != true)) {
-                    this.CustomerOrderField = value;
-                    this.RaisePropertyChanged("CustomerOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ItemName {
-            get {
-                return this.ItemNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemNameField, value) != true)) {
-                    this.ItemNameField = value;
-                    this.RaisePropertyChanged("ItemName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderId {
-            get {
-                return this.OrderIdField;
-            }
-            set {
-                if ((this.OrderIdField.Equals(value) != true)) {
-                    this.OrderIdField = value;
-                    this.RaisePropertyChanged("OrderId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int QTY {
-            get {
-                return this.QTYField;
-            }
-            set {
-                if ((this.QTYField.Equals(value) != true)) {
-                    this.QTYField = value;
-                    this.RaisePropertyChanged("QTY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal TotalPrice {
-            get {
-                return this.TotalPriceField;
-            }
-            set {
-                if ((this.TotalPriceField.Equals(value) != true)) {
-                    this.TotalPriceField = value;
-                    this.RaisePropertyChanged("TotalPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal UnitPrice {
-            get {
-                return this.UnitPriceField;
-            }
-            set {
-                if ((this.UnitPriceField.Equals(value) != true)) {
-                    this.UnitPriceField = value;
-                    this.RaisePropertyChanged("UnitPrice");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Invoice", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors")]
-    [System.SerializableAttribute()]
-    public partial class Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DustCollectorsPresentation.ServiceReference1.CustomerOrder CustomerOrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DueDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DustCollectorsPresentation.ServiceReference1.CustomerOrder CustomerOrder {
-            get {
-                return this.CustomerOrderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerOrderField, value) != true)) {
-                    this.CustomerOrderField = value;
-                    this.RaisePropertyChanged("CustomerOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DueDate {
-            get {
-                return this.DueDateField;
-            }
-            set {
-                if ((this.DueDateField.Equals(value) != true)) {
-                    this.DueDateField = value;
-                    this.RaisePropertyChanged("DueDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderId {
-            get {
-                return this.OrderIdField;
-            }
-            set {
-                if ((this.OrderIdField.Equals(value) != true)) {
-                    this.OrderIdField = value;
-                    this.RaisePropertyChanged("OrderId");
                 }
             }
         }
@@ -2838,163 +2620,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
                 if ((this.isActiveField.Equals(value) != true)) {
                     this.isActiveField = value;
                     this.RaisePropertyChanged("isActive");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CartProduct", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors.Classes")]
-    [System.SerializableAttribute()]
-    public partial class CartProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal PriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int QTYField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SizeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UserIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int amountInStockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string imageURLField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sizeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Price {
-            get {
-                return this.PriceField;
-            }
-            set {
-                if ((this.PriceField.Equals(value) != true)) {
-                    this.PriceField = value;
-                    this.RaisePropertyChanged("Price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int QTY {
-            get {
-                return this.QTYField;
-            }
-            set {
-                if ((this.QTYField.Equals(value) != true)) {
-                    this.QTYField = value;
-                    this.RaisePropertyChanged("QTY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SizeID {
-            get {
-                return this.SizeIDField;
-            }
-            set {
-                if ((this.SizeIDField.Equals(value) != true)) {
-                    this.SizeIDField = value;
-                    this.RaisePropertyChanged("SizeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserID {
-            get {
-                return this.UserIDField;
-            }
-            set {
-                if ((this.UserIDField.Equals(value) != true)) {
-                    this.UserIDField = value;
-                    this.RaisePropertyChanged("UserID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int amountInStock {
-            get {
-                return this.amountInStockField;
-            }
-            set {
-                if ((this.amountInStockField.Equals(value) != true)) {
-                    this.amountInStockField = value;
-                    this.RaisePropertyChanged("amountInStock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string imageURL {
-            get {
-                return this.imageURLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.imageURLField, value) != true)) {
-                    this.imageURLField = value;
-                    this.RaisePropertyChanged("imageURL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nameField, value) != true)) {
-                    this.nameField = value;
-                    this.RaisePropertyChanged("name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
-                    this.sizeField = value;
-                    this.RaisePropertyChanged("size");
                 }
             }
         }
@@ -4070,6 +3695,163 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartProduct", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors.Classes")]
+    [System.SerializableAttribute()]
+    public partial class CartProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QTYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SizeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int amountInStockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sizeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int QTY {
+            get {
+                return this.QTYField;
+            }
+            set {
+                if ((this.QTYField.Equals(value) != true)) {
+                    this.QTYField = value;
+                    this.RaisePropertyChanged("QTY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SizeID {
+            get {
+                return this.SizeIDField;
+            }
+            set {
+                if ((this.SizeIDField.Equals(value) != true)) {
+                    this.SizeIDField = value;
+                    this.RaisePropertyChanged("SizeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int amountInStock {
+            get {
+                return this.amountInStockField;
+            }
+            set {
+                if ((this.amountInStockField.Equals(value) != true)) {
+                    this.amountInStockField = value;
+                    this.RaisePropertyChanged("amountInStock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string imageURL {
+            get {
+                return this.imageURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageURLField, value) != true)) {
+                    this.imageURLField = value;
+                    this.RaisePropertyChanged("imageURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sizeField, value) != true)) {
+                    this.sizeField = value;
+                    this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -4128,11 +3910,11 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddItemToCart", ReplyAction="http://tempuri.org/IService1/AddItemToCartResponse")]
         System.Threading.Tasks.Task<bool> AddItemToCartAsync(int userId, int sizeId, int qty);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/placeOrder", ReplyAction="http://tempuri.org/IService1/placeOrderResponse")]
-        bool placeOrder(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartProducts, decimal VAT, decimal subTotal, decimal grandTotal, int userId, int addressId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createInvoice", ReplyAction="http://tempuri.org/IService1/createInvoiceResponse")]
+        int createInvoice(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/placeOrder", ReplyAction="http://tempuri.org/IService1/placeOrderResponse")]
-        System.Threading.Tasks.Task<bool> placeOrderAsync(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartProducts, decimal VAT, decimal subTotal, decimal grandTotal, int userId, int addressId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createInvoice", ReplyAction="http://tempuri.org/IService1/createInvoiceResponse")]
+        System.Threading.Tasks.Task<int> createInvoiceAsync(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserSessionDetails", ReplyAction="http://tempuri.org/IService1/GetUserSessionDetailsResponse")]
         DustCollectorsPresentation.ServiceReference1.UserSessionDetails GetUserSessionDetails(string email, string password);
@@ -4284,6 +4066,24 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCartProducts", ReplyAction="http://tempuri.org/IService1/getCartProductsResponse")]
         System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.CartProduct[]> getCartProductsAsync(int userId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProductsByCategory", ReplyAction="http://tempuri.org/IService1/getProductsByCategoryResponse")]
+        DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[] getProductsByCategory(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProductsByCategory", ReplyAction="http://tempuri.org/IService1/getProductsByCategoryResponse")]
+        System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[]> getProductsByCategoryAsync(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProductsByGender", ReplyAction="http://tempuri.org/IService1/getProductsByGenderResponse")]
+        DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[] getProductsByGender(int genderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProductsByGender", ReplyAction="http://tempuri.org/IService1/getProductsByGenderResponse")]
+        System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[]> getProductsByGenderAsync(int genderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProductsByColourway", ReplyAction="http://tempuri.org/IService1/getProductsByColourwayResponse")]
+        DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[] getProductsByColourway(int colourwayId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProductsByColourway", ReplyAction="http://tempuri.org/IService1/getProductsByColourwayResponse")]
+        System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[]> getProductsByColourwayAsync(int colourwayId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBrand", ReplyAction="http://tempuri.org/IService1/updateBrandResponse")]
         bool updateBrand(DustCollectorsPresentation.ServiceReference1.BrandDTO updatedBrand);
         
@@ -4325,6 +4125,24 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateUserPersonalDetails", ReplyAction="http://tempuri.org/IService1/updateUserPersonalDetailsResponse")]
         System.Threading.Tasks.Task<bool> updateUserPersonalDetailsAsync(DustCollectorsPresentation.ServiceReference1.UserPersonalDetails details);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateCartItem", ReplyAction="http://tempuri.org/IService1/updateCartItemResponse")]
+        bool updateCartItem(int sizeId, int userId, int qty);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateCartItem", ReplyAction="http://tempuri.org/IService1/updateCartItemResponse")]
+        System.Threading.Tasks.Task<bool> updateCartItemAsync(int sizeId, int userId, int qty);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/activateGenderCategory", ReplyAction="http://tempuri.org/IService1/activateGenderCategoryResponse")]
+        bool activateGenderCategory(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/activateGenderCategory", ReplyAction="http://tempuri.org/IService1/activateGenderCategoryResponse")]
+        System.Threading.Tasks.Task<bool> activateGenderCategoryAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateQTYS", ReplyAction="http://tempuri.org/IService1/updateQTYSResponse")]
+        bool updateQTYS(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartItems);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateQTYS", ReplyAction="http://tempuri.org/IService1/updateQTYSResponse")]
+        System.Threading.Tasks.Task<bool> updateQTYSAsync(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartItems);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteAddress", ReplyAction="http://tempuri.org/IService1/deleteAddressResponse")]
         bool deleteAddress(int addressID);
@@ -4373,6 +4191,12 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteCartItems", ReplyAction="http://tempuri.org/IService1/deleteCartItemsResponse")]
         System.Threading.Tasks.Task<bool> deleteCartItemsAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removeShoeSize", ReplyAction="http://tempuri.org/IService1/removeShoeSizeResponse")]
+        bool removeShoeSize(int sizeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removeShoeSize", ReplyAction="http://tempuri.org/IService1/removeShoeSizeResponse")]
+        System.Threading.Tasks.Task<bool> removeShoeSizeAsync(int sizeId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4474,12 +4298,12 @@ namespace DustCollectorsPresentation.ServiceReference1 {
             return base.Channel.AddItemToCartAsync(userId, sizeId, qty);
         }
         
-        public bool placeOrder(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartProducts, decimal VAT, decimal subTotal, decimal grandTotal, int userId, int addressId) {
-            return base.Channel.placeOrder(cartProducts, VAT, subTotal, grandTotal, userId, addressId);
+        public int createInvoice(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot) {
+            return base.Channel.createInvoice(userID, addressID, subtotal, vat, deliveryfee, grandTot);
         }
         
-        public System.Threading.Tasks.Task<bool> placeOrderAsync(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartProducts, decimal VAT, decimal subTotal, decimal grandTotal, int userId, int addressId) {
-            return base.Channel.placeOrderAsync(cartProducts, VAT, subTotal, grandTotal, userId, addressId);
+        public System.Threading.Tasks.Task<int> createInvoiceAsync(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot) {
+            return base.Channel.createInvoiceAsync(userID, addressID, subtotal, vat, deliveryfee, grandTot);
         }
         
         public DustCollectorsPresentation.ServiceReference1.UserSessionDetails GetUserSessionDetails(string email, string password) {
@@ -4682,6 +4506,30 @@ namespace DustCollectorsPresentation.ServiceReference1 {
             return base.Channel.getCartProductsAsync(userId);
         }
         
+        public DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[] getProductsByCategory(int categoryId) {
+            return base.Channel.getProductsByCategory(categoryId);
+        }
+        
+        public System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[]> getProductsByCategoryAsync(int categoryId) {
+            return base.Channel.getProductsByCategoryAsync(categoryId);
+        }
+        
+        public DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[] getProductsByGender(int genderId) {
+            return base.Channel.getProductsByGender(genderId);
+        }
+        
+        public System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[]> getProductsByGenderAsync(int genderId) {
+            return base.Channel.getProductsByGenderAsync(genderId);
+        }
+        
+        public DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[] getProductsByColourway(int colourwayId) {
+            return base.Channel.getProductsByColourway(colourwayId);
+        }
+        
+        public System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog[]> getProductsByColourwayAsync(int colourwayId) {
+            return base.Channel.getProductsByColourwayAsync(colourwayId);
+        }
+        
         public bool updateBrand(DustCollectorsPresentation.ServiceReference1.BrandDTO updatedBrand) {
             return base.Channel.updateBrand(updatedBrand);
         }
@@ -4736,6 +4584,30 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> updateUserPersonalDetailsAsync(DustCollectorsPresentation.ServiceReference1.UserPersonalDetails details) {
             return base.Channel.updateUserPersonalDetailsAsync(details);
+        }
+        
+        public bool updateCartItem(int sizeId, int userId, int qty) {
+            return base.Channel.updateCartItem(sizeId, userId, qty);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateCartItemAsync(int sizeId, int userId, int qty) {
+            return base.Channel.updateCartItemAsync(sizeId, userId, qty);
+        }
+        
+        public bool activateGenderCategory(int id) {
+            return base.Channel.activateGenderCategory(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> activateGenderCategoryAsync(int id) {
+            return base.Channel.activateGenderCategoryAsync(id);
+        }
+        
+        public bool updateQTYS(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartItems) {
+            return base.Channel.updateQTYS(cartItems);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateQTYSAsync(DustCollectorsPresentation.ServiceReference1.CartProduct[] cartItems) {
+            return base.Channel.updateQTYSAsync(cartItems);
         }
         
         public bool deleteAddress(int addressID) {
@@ -4800,6 +4672,14 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> deleteCartItemsAsync(int userId) {
             return base.Channel.deleteCartItemsAsync(userId);
+        }
+        
+        public bool removeShoeSize(int sizeId) {
+            return base.Channel.removeShoeSize(sizeId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeShoeSizeAsync(int sizeId) {
+            return base.Channel.removeShoeSizeAsync(sizeId);
         }
     }
 }

@@ -133,22 +133,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="placeOrder">
+  <xs:element name="createInvoice">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="cartProducts" nillable="true" type="q10:ArrayOfCartProduct" />
-        <xs:element minOccurs="0" name="VAT" type="xs:decimal" />
-        <xs:element minOccurs="0" name="subTotal" type="xs:decimal" />
-        <xs:element minOccurs="0" name="grandTotal" type="xs:decimal" />
-        <xs:element minOccurs="0" name="userId" type="xs:int" />
-        <xs:element minOccurs="0" name="addressId" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="addressID" type="xs:int" />
+        <xs:element minOccurs="0" name="subtotal" type="xs:decimal" />
+        <xs:element minOccurs="0" name="vat" type="xs:decimal" />
+        <xs:element minOccurs="0" name="deliveryfee" type="xs:decimal" />
+        <xs:element minOccurs="0" name="grandTot" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="placeOrderResponse">
+  <xs:element name="createInvoiceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="placeOrderResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="createInvoiceResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -163,7 +163,7 @@
   <xs:element name="GetUserSessionDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="GetUserSessionDetailsResult" nillable="true" type="q11:UserSessionDetails" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="GetUserSessionDetailsResult" nillable="true" type="q10:UserSessionDetails" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -177,7 +177,7 @@
   <xs:element name="GetUserDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="GetUserDetailsResult" nillable="true" type="q12:UserPersonalDetails" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="GetUserDetailsResult" nillable="true" type="q11:UserPersonalDetails" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -205,7 +205,7 @@
   <xs:element name="GetCustomerAddressesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="GetCustomerAddressesResult" nillable="true" type="q13:ArrayOfCustomerAddress" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="GetCustomerAddressesResult" nillable="true" type="q12:ArrayOfCustomerAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -219,7 +219,7 @@
   <xs:element name="getCustomerAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCustomerAddressResult" nillable="true" type="q14:CustomerAddress" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCustomerAddressResult" nillable="true" type="q13:CustomerAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -233,7 +233,7 @@
   <xs:element name="getBrandsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getBrandsResult" nillable="true" type="q15:ArrayOfBrandDTO" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getBrandsResult" nillable="true" type="q14:ArrayOfBrandDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -247,7 +247,7 @@
   <xs:element name="getCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCategoriesResult" nillable="true" type="q16:ArrayOfCategoryDTO" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCategoriesResult" nillable="true" type="q15:ArrayOfCategoryDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -259,7 +259,7 @@
   <xs:element name="getColourwaysResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DustCollectors" minOccurs="0" name="getColourwaysResult" nillable="true" type="q17:ArrayOfColourwayDTO" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DustCollectors" minOccurs="0" name="getColourwaysResult" nillable="true" type="q16:ArrayOfColourwayDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -271,7 +271,7 @@
   <xs:element name="getGendersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getGendersResult" nillable="true" type="q18:ArrayOfGenderDTO" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getGendersResult" nillable="true" type="q17:ArrayOfGenderDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -285,7 +285,7 @@
   <xs:element name="getProductSizesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductSizesResult" nillable="true" type="q19:ArrayOfProductSizeDTO" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductSizesResult" nillable="true" type="q18:ArrayOfProductSizeDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -299,7 +299,7 @@
   <xs:element name="getUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getUsersResult" nillable="true" type="q20:ArrayOfSysUserDTO" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getUsersResult" nillable="true" type="q19:ArrayOfSysUserDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -311,7 +311,7 @@
   <xs:element name="getActiveProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getActiveProductsResult" nillable="true" type="q21:ArrayOfDisplayProdCatalog" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getActiveProductsResult" nillable="true" type="q20:ArrayOfDisplayProdCatalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -323,7 +323,7 @@
   <xs:element name="getInactiveProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getInactiveProductsResult" nillable="true" type="q22:ArrayOfDisplayProdCatalog" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getInactiveProductsResult" nillable="true" type="q21:ArrayOfDisplayProdCatalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -335,7 +335,7 @@
   <xs:element name="getAllProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getAllProductsResult" nillable="true" type="q23:ArrayOfDisplayProdCatalog" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getAllProductsResult" nillable="true" type="q22:ArrayOfDisplayProdCatalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -349,7 +349,7 @@
   <xs:element name="getProductsForManagementTblResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductsForManagementTblResult" nillable="true" type="q24:ArrayOfProdForTblManagement" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductsForManagementTblResult" nillable="true" type="q23:ArrayOfProdForTblManagement" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -363,7 +363,7 @@
   <xs:element name="getProductDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductDetailsResult" nillable="true" type="q25:ProductDetail" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductDetailsResult" nillable="true" type="q24:ProductDetail" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -377,7 +377,7 @@
   <xs:element name="getProductInfoForEditingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductInfoForEditingResult" nillable="true" type="q26:ProductDTO" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductInfoForEditingResult" nillable="true" type="q25:ProductDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -391,7 +391,7 @@
   <xs:element name="getBrandResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getBrandResult" nillable="true" type="q27:BrandDTO" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getBrandResult" nillable="true" type="q26:BrandDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -405,7 +405,7 @@
   <xs:element name="getGenderCategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getGenderCategoryResult" nillable="true" type="q28:GenderDTO" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getGenderCategoryResult" nillable="true" type="q27:GenderDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -419,7 +419,7 @@
   <xs:element name="getColourwayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DustCollectors" minOccurs="0" name="getColourwayResult" nillable="true" type="q29:ColourwayDTO" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DustCollectors" minOccurs="0" name="getColourwayResult" nillable="true" type="q28:ColourwayDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -433,7 +433,7 @@
   <xs:element name="getCategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCategoryResult" nillable="true" type="q30:CategoryDTO" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCategoryResult" nillable="true" type="q29:CategoryDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -445,7 +445,7 @@
   <xs:element name="getDailyRegisteredUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getDailyRegisteredUsersResult" nillable="true" type="q31:ArrayOfRegisteredUsers" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getDailyRegisteredUsersResult" nillable="true" type="q30:ArrayOfRegisteredUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -457,7 +457,7 @@
   <xs:element name="getMonthlyRegisteredUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getMonthlyRegisteredUsersResult" nillable="true" type="q32:ArrayOfMonthlyUsers" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getMonthlyRegisteredUsersResult" nillable="true" type="q31:ArrayOfMonthlyUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -469,7 +469,7 @@
   <xs:element name="getAnnualUserRegistrationsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getAnnualUserRegistrationsResult" nillable="true" type="q33:ArrayOfAnnualUserRegistrations" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getAnnualUserRegistrationsResult" nillable="true" type="q32:ArrayOfAnnualUserRegistrations" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -483,14 +483,56 @@
   <xs:element name="getCartProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCartProductsResult" nillable="true" type="q34:ArrayOfCartProduct" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getCartProductsResult" nillable="true" type="q33:ArrayOfCartProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductsByCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductsByCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductsByCategoryResult" nillable="true" type="q34:ArrayOfDisplayProdCatalog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductsByGender">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="genderId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductsByGenderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductsByGenderResult" nillable="true" type="q35:ArrayOfDisplayProdCatalog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductsByColourway">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="colourwayId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductsByColourwayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="getProductsByColourwayResult" nillable="true" type="q36:ArrayOfDisplayProdCatalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="updateBrand">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="updatedBrand" nillable="true" type="q35:BrandDTO" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="updatedBrand" nillable="true" type="q37:BrandDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -504,7 +546,7 @@
   <xs:element name="updateCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="updatedCategory" nillable="true" type="q36:CategoryDTO" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="updatedCategory" nillable="true" type="q38:CategoryDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -518,7 +560,7 @@
   <xs:element name="updateColourway">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DustCollectors" minOccurs="0" name="updatedColourway" nillable="true" type="q37:ColourwayDTO" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DustCollectors" minOccurs="0" name="updatedColourway" nillable="true" type="q39:ColourwayDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -532,7 +574,7 @@
   <xs:element name="updateGenderCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="updatedGenderCategory" nillable="true" type="q38:GenderDTO" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="updatedGenderCategory" nillable="true" type="q40:GenderDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -561,9 +603,9 @@
   <xs:element name="updateProductAndSizes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="product" nillable="true" type="q39:ProductDTO" />
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="newSizes" nillable="true" type="q40:ArrayOfProductSizeDTO" />
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="editedSizes" nillable="true" type="q41:ArrayOfProductSizeDTO" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="product" nillable="true" type="q41:ProductDTO" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="newSizes" nillable="true" type="q42:ArrayOfProductSizeDTO" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="editedSizes" nillable="true" type="q43:ArrayOfProductSizeDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -577,7 +619,7 @@
   <xs:element name="updateUserPersonalDetails">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="details" nillable="true" type="q42:UserPersonalDetails" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="details" nillable="true" type="q44:UserPersonalDetails" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -585,6 +627,50 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="updateUserPersonalDetailsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCartItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sizeId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="qty" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCartItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateCartItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="activateGenderCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="activateGenderCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activateGenderCategoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateQTYS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/DustCollectors.Classes" minOccurs="0" name="cartItems" nillable="true" type="q45:ArrayOfCartProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateQTYSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateQTYSResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -605,7 +691,7 @@
   <xs:element name="deleteProductSizes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q43:ArrayOfint" />
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q46:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -698,6 +784,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="deleteCartItemsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removeShoeSize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sizeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removeShoeSizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="removeShoeSizeResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -11,26 +11,26 @@ namespace DustCollectorsPresentation
 {
 
 
-    public partial class genders
+    public partial class colourways
     {
 
         /// <summary>
-        /// shoeSizesTbl control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table shoeSizesTbl;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// tblHeaderRow control.
+        /// lblstatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TableHeaderRow tblHeaderRow;
+        protected global::System.Web.UI.WebControls.Label lblstatus;
 
         /// <summary>
         /// btnAdd control.

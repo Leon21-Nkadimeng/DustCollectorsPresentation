@@ -38,7 +38,10 @@ namespace DustCollectorsPresentation
                 {
                     btnSaveChanges.Visible = false;
                     btnSubmit.Visible = true;
-                }
+                } 
+            } else
+            {
+                Response.Redirect("login.aspx");
             }
         }
 
@@ -57,7 +60,14 @@ namespace DustCollectorsPresentation
                 CustomerID = int.Parse(Session["userID"].ToString())
             });
             if (isInserted)
-                Response.Redirect("deliveryAddresses.aspx");
+            {
+                lblStatus.Text = "Address added";
+                if (Request.QueryString["from"] != null && Request.QueryString["from"].ToString().Equals("checkout"))
+                {
+                    btnTocart.Visible = true;
+                }
+
+            }
             else
                 lblStatus.Text = "Could not insert address";
         }
@@ -65,6 +75,11 @@ namespace DustCollectorsPresentation
         protected void btnSaveChanges_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnTocart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Cart.aspx");
         }
     }
 }

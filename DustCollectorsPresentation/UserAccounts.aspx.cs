@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace DustCollectorsPresentation
 {
-    public partial class userManagement : System.Web.UI.Page
+    public partial class UserAccounts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserType"] == null || !Session["UserType"].Equals("admin"))
-                Response.Redirect("index.aspx");
+
         }
-
-
     }
 }

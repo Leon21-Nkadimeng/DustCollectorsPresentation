@@ -15,8 +15,7 @@ namespace DustCollectorsPresentation
         private List<ProductSizeDTO> newSizes;
         // sizes we are editing
         private List<ProductSizeDTO> editedSizes;
-        // ids of sizes we want to remove
-        private List<int> sizesToBeRemoved;
+       
         private Service1Client client = new Service1Client();
         // product we are edititng
         private ProductDTO prod;
@@ -160,8 +159,8 @@ namespace DustCollectorsPresentation
                 }
                 
                lblStatus.Text = sizes[sizeIndex].Id.ToString() + " " + sizes[sizeIndex].SizeTag + " " + sizes[sizeIndex].System + " " + sizes[sizeIndex].AmountInStock.ToString();
-               
 
+                lblStatus.Visible = true;
                 sizeIndex = -1;
                 Session["sizeIndex"] = null;
             }
@@ -174,11 +173,9 @@ namespace DustCollectorsPresentation
                     System = txtShoeSizeSystem.Text,
                     IsAvailable = isShoeSizeAvailable.Checked
                 };
-                if (!sizeExists(size, sizes) && !sizeExists(size, editedSizes) && !sizeExists(size, newSizes))
+                if (!sizeExists(size, sizes))
                 {
                     sizes.Add(size);
-
-
                     newSizes.Add(size);
                  
                 }
@@ -215,7 +212,10 @@ namespace DustCollectorsPresentation
                 MainImgURL = txtMainImgURl.Text
             };
             string isUpdated = client.updateProductAndSizes(prod, newSizes.ToArray(), editedSizes.ToArray());
-            lblStatus.Text = isUpdated;
+
+            lblStatus.Text += isUpdated + " " + newSizes.Count();
+
+
             Session["editedSizes"] = null;
             Session["newSizes"] = null;
             Session["sizes"] = null;
@@ -226,21 +226,11 @@ namespace DustCollectorsPresentation
         {
             var button = (Button)sender;
             int i = int.Parse(button.ID.Substring(3));
-           
-            if(Session["sizesToBeRemoved"] == null)
-            {
-                sizesToBeRemoved = new List<int>();
-            } 
-            else
-            {
-                sizesToBeRemoved = (List<int>)Session["sizesToBeRemoved"];
-            }
-            if (sizes[i].Id != -1)
-            {
-                sizesToBeRemoved.Add(sizes[i].Id);
-                Session["sizesToBeRemoved"] = sizesToBeRemoved;
-            }
-           
+
+
+            client.removeShoeSize(sizes[i].Id);
+ 
+            sizes[i] = null;
             sizes.RemoveAt(i);
 
             Session["sizes"] = sizes;
@@ -393,5 +383,6 @@ namespace DustCollectorsPresentation
             }
 
         }
+        
     }
 }

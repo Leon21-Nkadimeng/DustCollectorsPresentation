@@ -2,13 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Cart</title>
 	<style>
-		.instockTag{
+		.instockTag
+		{
 			font-weight: bold;
 		}
 	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-		<!-- breadcrumb -->
+        <!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
@@ -108,8 +109,8 @@
 									Shipping Address:
 								</span>
 									
-										<asp:DropDownList ID="addresses" style="width:100%;" class="size-111 bor8 stext-102 cl2 p-lr-20" runat="server">
-											<asp:ListItem>Select Address</asp:ListItem>
+										<asp:DropDownList AutoPostBack="true" ID="addresses" style="width:100%;" class="size-111 bor8 stext-102 cl2 p-lr-20" runat="server" OnSelectedIndexChanged="addresses_SelectedIndexChanged">
+											
 										</asp:DropDownList>
 										<asp:Label ID="lblSelectAddress" runat="server" Text="Select Delivery Address*" style="color:red;" Visible="false"></asp:Label>
 								</div>

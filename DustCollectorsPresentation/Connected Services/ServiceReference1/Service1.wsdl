@@ -63,11 +63,11 @@
   <wsdl:message name="IService1_AddItemToCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddItemToCartResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_placeOrder_InputMessage">
-    <wsdl:part name="parameters" element="tns:placeOrder" />
+  <wsdl:message name="IService1_createInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:createInvoice" />
   </wsdl:message>
-  <wsdl:message name="IService1_placeOrder_OutputMessage">
-    <wsdl:part name="parameters" element="tns:placeOrderResponse" />
+  <wsdl:message name="IService1_createInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createInvoiceResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetUserSessionDetails_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUserSessionDetails" />
@@ -219,6 +219,24 @@
   <wsdl:message name="IService1_getCartProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:getCartProductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getProductsByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProductsByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProductsByGender_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsByGender" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProductsByGender_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsByGenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProductsByColourway_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsByColourway" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProductsByColourway_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsByColourwayResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_updateBrand_InputMessage">
     <wsdl:part name="parameters" element="tns:updateBrand" />
   </wsdl:message>
@@ -260,6 +278,24 @@
   </wsdl:message>
   <wsdl:message name="IService1_updateUserPersonalDetails_OutputMessage">
     <wsdl:part name="parameters" element="tns:updateUserPersonalDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCartItem" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_activateGenderCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:activateGenderCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_activateGenderCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:activateGenderCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateQTYS_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateQTYS" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateQTYS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateQTYSResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_deleteAddress_InputMessage">
     <wsdl:part name="parameters" element="tns:deleteAddress" />
@@ -309,6 +345,12 @@
   <wsdl:message name="IService1_deleteCartItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:deleteCartItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_removeShoeSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeShoeSize" />
+  </wsdl:message>
+  <wsdl:message name="IService1_removeShoeSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeShoeSizeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="IsReg">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IsReg" message="tns:IService1_IsReg_InputMessage" />
@@ -346,9 +388,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddItemToCart" message="tns:IService1_AddItemToCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddItemToCartResponse" message="tns:IService1_AddItemToCart_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="placeOrder">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/placeOrder" message="tns:IService1_placeOrder_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/placeOrderResponse" message="tns:IService1_placeOrder_OutputMessage" />
+    <wsdl:operation name="createInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createInvoice" message="tns:IService1_createInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createInvoiceResponse" message="tns:IService1_createInvoice_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUserSessionDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserSessionDetails" message="tns:IService1_GetUserSessionDetails_InputMessage" />
@@ -450,6 +492,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCartProducts" message="tns:IService1_getCartProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getCartProductsResponse" message="tns:IService1_getCartProducts_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getProductsByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProductsByCategory" message="tns:IService1_getProductsByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProductsByCategoryResponse" message="tns:IService1_getProductsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductsByGender">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProductsByGender" message="tns:IService1_getProductsByGender_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProductsByGenderResponse" message="tns:IService1_getProductsByGender_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductsByColourway">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProductsByColourway" message="tns:IService1_getProductsByColourway_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProductsByColourwayResponse" message="tns:IService1_getProductsByColourway_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="updateBrand">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateBrand" message="tns:IService1_updateBrand_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateBrandResponse" message="tns:IService1_updateBrand_OutputMessage" />
@@ -477,6 +531,18 @@
     <wsdl:operation name="updateUserPersonalDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateUserPersonalDetails" message="tns:IService1_updateUserPersonalDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateUserPersonalDetailsResponse" message="tns:IService1_updateUserPersonalDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateCartItem" message="tns:IService1_updateCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateCartItemResponse" message="tns:IService1_updateCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="activateGenderCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/activateGenderCategory" message="tns:IService1_activateGenderCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/activateGenderCategoryResponse" message="tns:IService1_activateGenderCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateQTYS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateQTYS" message="tns:IService1_updateQTYS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateQTYSResponse" message="tns:IService1_updateQTYS_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="deleteAddress">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteAddress" message="tns:IService1_deleteAddress_InputMessage" />
@@ -509,6 +575,10 @@
     <wsdl:operation name="deleteCartItems">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteCartItems" message="tns:IService1_deleteCartItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteCartItemsResponse" message="tns:IService1_deleteCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeShoeSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/removeShoeSize" message="tns:IService1_removeShoeSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/removeShoeSizeResponse" message="tns:IService1_removeShoeSize_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -594,8 +664,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="placeOrder">
-      <soap:operation soapAction="http://tempuri.org/IService1/placeOrder" style="document" />
+    <wsdl:operation name="createInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService1/createInvoice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -828,6 +898,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getProductsByCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/getProductsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductsByGender">
+      <soap:operation soapAction="http://tempuri.org/IService1/getProductsByGender" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductsByColourway">
+      <soap:operation soapAction="http://tempuri.org/IService1/getProductsByColourway" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="updateBrand">
       <soap:operation soapAction="http://tempuri.org/IService1/updateBrand" style="document" />
       <wsdl:input>
@@ -884,6 +981,33 @@
     </wsdl:operation>
     <wsdl:operation name="updateUserPersonalDetails">
       <soap:operation soapAction="http://tempuri.org/IService1/updateUserPersonalDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCartItem">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateCartItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activateGenderCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/activateGenderCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateQTYS">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateQTYS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -956,6 +1080,15 @@
     </wsdl:operation>
     <wsdl:operation name="deleteCartItems">
       <soap:operation soapAction="http://tempuri.org/IService1/deleteCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeShoeSize">
+      <soap:operation soapAction="http://tempuri.org/IService1/removeShoeSize" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -13,6 +13,8 @@ namespace DustCollectorsPresentation
         private Service1Client client = new Service1Client();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserType"] == null || !Session["UserType"].Equals("admin"))
+                Response.Redirect("index.aspx");
             if (!IsPostBack)
             {
                 breadCrumb.InnerHtml += "<span class='stext-109 cl4'>";

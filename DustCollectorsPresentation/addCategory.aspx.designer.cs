@@ -11,34 +11,43 @@ namespace DustCollectorsPresentation
 {
 
 
-    public partial class genders
+    public partial class addCategory
     {
 
         /// <summary>
-        /// shoeSizesTbl control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table shoeSizesTbl;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// tblHeaderRow control.
+        /// isAvailable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TableHeaderRow tblHeaderRow;
+        protected global::System.Web.UI.WebControls.CheckBox isAvailable;
 
         /// <summary>
-        /// btnAdd control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

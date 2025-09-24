@@ -18,6 +18,9 @@ namespace DustCollectorsPresentation
    
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserType"] == null || !Session["UserType"].Equals("admin"))
+                Response.Redirect("index.aspx");
+
             sizeIndex = -1;
             if(Session["sizeIndex"] != null)
             {
@@ -172,7 +175,7 @@ namespace DustCollectorsPresentation
              }
             
         }
-        /** Remove product button */
+        /** Remove size button */
         protected void btnRemove_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;

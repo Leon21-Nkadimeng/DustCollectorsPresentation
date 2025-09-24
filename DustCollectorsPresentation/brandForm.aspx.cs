@@ -22,7 +22,7 @@ namespace DustCollectorsPresentation
                     var brand = client.getBrand(brandId);
                     if (brand != null && !IsPostBack)
                     {
-                        pageTitle.InnerText = brand.name + " (SKU: " + brand.Id + ")";
+                        pageTitle.InnerText = brand.name + " (ID: " + brand.Id + ")";
                         brandId = brand.Id;
                         logoSection.Visible = true;
                         txtName.Text = brand.name;

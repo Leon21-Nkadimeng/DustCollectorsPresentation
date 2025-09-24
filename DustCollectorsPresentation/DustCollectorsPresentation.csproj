@@ -74,12 +74,14 @@
     <Content Include="aboutProduct.aspx" />
     <Content Include="accountDashboard.aspx" />
     <Content Include="addAdmin.aspx" />
+    <Content Include="addCategory.aspx" />
     <Content Include="addressForm.aspx" />
     <Content Include="brands.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="charts.aspx" />
     <Content Include="checkout.html" />
-    <Content Include="colourways.aspx" />
+    <Content Include="addColourway.aspx" />
+    <Content Include="CheckoutPage.aspx" />
     <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.BrandDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -140,6 +142,8 @@
     </None>
     <Content Include="deliveryAddresses.aspx" />
     <Content Include="editProduct.aspx" />
+    <Content Include="genderForm.aspx" />
+    <Content Include="genderForm.html" />
     <Content Include="genders.aspx" />
     <Content Include="index.aspx" />
     <Content Include="brandForm.aspx" />
@@ -149,6 +153,7 @@
     <Content Include="inventory.aspx" />
     <Content Include="register.aspx" />
     <Content Include="securityDetails.aspx" />
+    <Content Include="UserAccounts.aspx" />
     <Content Include="userManagement.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -173,6 +178,13 @@
     </Compile>
     <Compile Include="addAdmin.aspx.designer.cs">
       <DependentUpon>addAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addCategory.aspx.cs">
+      <DependentUpon>addCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addCategory.aspx.designer.cs">
+      <DependentUpon>addCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="addressForm.aspx.cs">
       <DependentUpon>addressForm.aspx</DependentUpon>
@@ -202,12 +214,19 @@
     <Compile Include="charts.aspx.designer.cs">
       <DependentUpon>charts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="colourways.aspx.cs">
-      <DependentUpon>colourways.aspx</DependentUpon>
+    <Compile Include="addColourway.aspx.cs">
+      <DependentUpon>addColourway.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="colourways.aspx.designer.cs">
-      <DependentUpon>colourways.aspx</DependentUpon>
+    <Compile Include="addColourway.aspx.designer.cs">
+      <DependentUpon>addColourway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutPage.aspx.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutPage.aspx.designer.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -227,6 +246,13 @@
     </Compile>
     <Compile Include="editProduct.aspx.designer.cs">
       <DependentUpon>editProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="genderForm.aspx.cs">
+      <DependentUpon>genderForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="genderForm.aspx.designer.cs">
+      <DependentUpon>genderForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="genders.aspx.cs">
       <DependentUpon>genders.aspx</DependentUpon>
@@ -301,6 +327,13 @@
     <Compile Include="securityDetails.aspx.designer.cs">
       <DependentUpon>securityDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserAccounts.aspx.cs">
+      <DependentUpon>UserAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccounts.aspx.designer.cs">
+      <DependentUpon>UserAccounts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="userManagement.aspx.cs">
       <DependentUpon>userManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,7 +341,6 @@
     <Compile Include="userManagement.aspx.designer.cs">
       <DependentUpon>userManagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\GenderEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NavigationAndFooter.Master" />
@@ -341,6 +373,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
