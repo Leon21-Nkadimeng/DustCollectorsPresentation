@@ -25,21 +25,7 @@ namespace DustCollectorsPresentation
 
                 }
             }
-            dynamic monthlyRegUsers = client.getMonthlyRegisteredUsers();
-            if (dailyRegUsers != null)
-            {
-                Series regUsersSeries = MOnthlyRegisteredUsers.Series["monthlyUsers"];
-                foreach (MonthlyUsers u in monthlyRegUsers)
-                {
-
-                    regUsersSeries.Points.AddXY(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(u.Month)), u.numUsers);
-
-
-
-
-
-                }
-            }
+         
             dynamic annualRegUsers = client.getAnnualUserRegistrations();
             if (dailyRegUsers != null)
             {

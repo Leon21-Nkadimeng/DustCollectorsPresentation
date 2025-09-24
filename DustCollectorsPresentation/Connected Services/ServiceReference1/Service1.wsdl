@@ -9,6 +9,30 @@
       <xsd:import schemaLocation="http://localhost:50181/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_createInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:createInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getInvoiceByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInvoiceByID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getInvoiceByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInvoiceByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_IsReg_InputMessage">
     <wsdl:part name="parameters" element="tns:IsReg" />
   </wsdl:message>
@@ -62,12 +86,6 @@
   </wsdl:message>
   <wsdl:message name="IService1_AddItemToCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddItemToCartResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_createInvoice_InputMessage">
-    <wsdl:part name="parameters" element="tns:createInvoice" />
-  </wsdl:message>
-  <wsdl:message name="IService1_createInvoice_OutputMessage">
-    <wsdl:part name="parameters" element="tns:createInvoiceResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetUserSessionDetails_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUserSessionDetails" />
@@ -352,6 +370,22 @@
     <wsdl:part name="parameters" element="tns:removeShoeSizeResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="createInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createInvoice" message="tns:IService1_createInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createInvoiceResponse" message="tns:IService1_createInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInvoices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserInvoices" message="tns:IService1_GetUserInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserInvoicesResponse" message="tns:IService1_GetUserInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteInvoice" message="tns:IService1_deleteInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteInvoiceResponse" message="tns:IService1_deleteInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getInvoiceByID" message="tns:IService1_getInvoiceByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getInvoiceByIDResponse" message="tns:IService1_getInvoiceByID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="IsReg">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IsReg" message="tns:IService1_IsReg_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/IsRegResponse" message="tns:IService1_IsReg_OutputMessage" />
@@ -387,10 +421,6 @@
     <wsdl:operation name="AddItemToCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddItemToCart" message="tns:IService1_AddItemToCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddItemToCartResponse" message="tns:IService1_AddItemToCart_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="createInvoice">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createInvoice" message="tns:IService1_createInvoice_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createInvoiceResponse" message="tns:IService1_createInvoice_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUserSessionDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserSessionDetails" message="tns:IService1_GetUserSessionDetails_InputMessage" />
@@ -583,6 +613,42 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService1/createInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInvoices">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceByID">
+      <soap:operation soapAction="http://tempuri.org/IService1/getInvoiceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="IsReg">
       <soap:operation soapAction="http://tempuri.org/IService1/IsReg" style="document" />
       <wsdl:input>
@@ -657,15 +723,6 @@
     </wsdl:operation>
     <wsdl:operation name="AddItemToCart">
       <soap:operation soapAction="http://tempuri.org/IService1/AddItemToCart" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createInvoice">
-      <soap:operation soapAction="http://tempuri.org/IService1/createInvoice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -5,19 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
-     <asp:Chart ID="MOnthlyRegisteredUsers" Title="Monthly User Registrations" runat="server">
-        <Series>
-            <asp:Series Name="monthlyUsers">
-              
-            </asp:Series>
-        </Series>
-        <ChartAreas>
-            <asp:ChartArea Name="ChartArea1">
-                <AxisX Title="Month"></AxisX>
-                <AxisY Title="Number Of Users"></AxisY>
-            </asp:ChartArea>
-        </ChartAreas>
-    </asp:Chart>
+    
     <asp:Chart Width="600px" Height="800px" ID="annualRegistratinos" Title="Annual User Registrations" runat="server">
         <Series>
             <asp:Series Name="annualUsers">

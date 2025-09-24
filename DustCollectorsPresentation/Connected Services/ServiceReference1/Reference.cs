@@ -15,6 +15,163 @@ namespace DustCollectorsPresentation.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceDTO", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors")]
+    [System.SerializableAttribute()]
+    public partial class InvoiceDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DeliveryFeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime InvoiceDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InvoiceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SubtotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal VATField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal DeliveryFee {
+            get {
+                return this.DeliveryFeeField;
+            }
+            set {
+                if ((this.DeliveryFeeField.Equals(value) != true)) {
+                    this.DeliveryFeeField = value;
+                    this.RaisePropertyChanged("DeliveryFee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime InvoiceDate {
+            get {
+                return this.InvoiceDateField;
+            }
+            set {
+                if ((this.InvoiceDateField.Equals(value) != true)) {
+                    this.InvoiceDateField = value;
+                    this.RaisePropertyChanged("InvoiceDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceID {
+            get {
+                return this.InvoiceIDField;
+            }
+            set {
+                if ((this.InvoiceIDField.Equals(value) != true)) {
+                    this.InvoiceIDField = value;
+                    this.RaisePropertyChanged("InvoiceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Subtotal {
+            get {
+                return this.SubtotalField;
+            }
+            set {
+                if ((this.SubtotalField.Equals(value) != true)) {
+                    this.SubtotalField = value;
+                    this.RaisePropertyChanged("Subtotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalAmount {
+            get {
+                return this.TotalAmountField;
+            }
+            set {
+                if ((this.TotalAmountField.Equals(value) != true)) {
+                    this.TotalAmountField = value;
+                    this.RaisePropertyChanged("TotalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal VAT {
+            get {
+                return this.VATField;
+            }
+            set {
+                if ((this.VATField.Equals(value) != true)) {
+                    this.VATField = value;
+                    this.RaisePropertyChanged("VAT");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SysUser", Namespace="http://schemas.datacontract.org/2004/07/DustCollectors")]
     [System.SerializableAttribute()]
     public partial class SysUser : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3856,6 +4013,30 @@ namespace DustCollectorsPresentation.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createInvoice", ReplyAction="http://tempuri.org/IService1/createInvoiceResponse")]
+        int createInvoice(int userID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createInvoice", ReplyAction="http://tempuri.org/IService1/createInvoiceResponse")]
+        System.Threading.Tasks.Task<int> createInvoiceAsync(int userID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserInvoices", ReplyAction="http://tempuri.org/IService1/GetUserInvoicesResponse")]
+        DustCollectorsPresentation.ServiceReference1.InvoiceDTO[] GetUserInvoices(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserInvoices", ReplyAction="http://tempuri.org/IService1/GetUserInvoicesResponse")]
+        System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.InvoiceDTO[]> GetUserInvoicesAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteInvoice", ReplyAction="http://tempuri.org/IService1/deleteInvoiceResponse")]
+        bool deleteInvoice(int inID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteInvoice", ReplyAction="http://tempuri.org/IService1/deleteInvoiceResponse")]
+        System.Threading.Tasks.Task<bool> deleteInvoiceAsync(int inID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getInvoiceByID", ReplyAction="http://tempuri.org/IService1/getInvoiceByIDResponse")]
+        DustCollectorsPresentation.ServiceReference1.InvoiceDTO getInvoiceByID(int inID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getInvoiceByID", ReplyAction="http://tempuri.org/IService1/getInvoiceByIDResponse")]
+        System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.InvoiceDTO> getInvoiceByIDAsync(int inID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsReg", ReplyAction="http://tempuri.org/IService1/IsRegResponse")]
         bool IsReg(DustCollectorsPresentation.ServiceReference1.SysUser user);
         
@@ -3909,12 +4090,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddItemToCart", ReplyAction="http://tempuri.org/IService1/AddItemToCartResponse")]
         System.Threading.Tasks.Task<bool> AddItemToCartAsync(int userId, int sizeId, int qty);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createInvoice", ReplyAction="http://tempuri.org/IService1/createInvoiceResponse")]
-        int createInvoice(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createInvoice", ReplyAction="http://tempuri.org/IService1/createInvoiceResponse")]
-        System.Threading.Tasks.Task<int> createInvoiceAsync(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserSessionDetails", ReplyAction="http://tempuri.org/IService1/GetUserSessionDetailsResponse")]
         DustCollectorsPresentation.ServiceReference1.UserSessionDetails GetUserSessionDetails(string email, string password);
@@ -4226,6 +4401,38 @@ namespace DustCollectorsPresentation.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
+        public int createInvoice(int userID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot) {
+            return base.Channel.createInvoice(userID, subtotal, vat, deliveryfee, grandTot);
+        }
+        
+        public System.Threading.Tasks.Task<int> createInvoiceAsync(int userID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot) {
+            return base.Channel.createInvoiceAsync(userID, subtotal, vat, deliveryfee, grandTot);
+        }
+        
+        public DustCollectorsPresentation.ServiceReference1.InvoiceDTO[] GetUserInvoices(int userID) {
+            return base.Channel.GetUserInvoices(userID);
+        }
+        
+        public System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.InvoiceDTO[]> GetUserInvoicesAsync(int userID) {
+            return base.Channel.GetUserInvoicesAsync(userID);
+        }
+        
+        public bool deleteInvoice(int inID) {
+            return base.Channel.deleteInvoice(inID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> deleteInvoiceAsync(int inID) {
+            return base.Channel.deleteInvoiceAsync(inID);
+        }
+        
+        public DustCollectorsPresentation.ServiceReference1.InvoiceDTO getInvoiceByID(int inID) {
+            return base.Channel.getInvoiceByID(inID);
+        }
+        
+        public System.Threading.Tasks.Task<DustCollectorsPresentation.ServiceReference1.InvoiceDTO> getInvoiceByIDAsync(int inID) {
+            return base.Channel.getInvoiceByIDAsync(inID);
+        }
+        
         public bool IsReg(DustCollectorsPresentation.ServiceReference1.SysUser user) {
             return base.Channel.IsReg(user);
         }
@@ -4296,14 +4503,6 @@ namespace DustCollectorsPresentation.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> AddItemToCartAsync(int userId, int sizeId, int qty) {
             return base.Channel.AddItemToCartAsync(userId, sizeId, qty);
-        }
-        
-        public int createInvoice(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot) {
-            return base.Channel.createInvoice(userID, addressID, subtotal, vat, deliveryfee, grandTot);
-        }
-        
-        public System.Threading.Tasks.Task<int> createInvoiceAsync(int userID, int addressID, decimal subtotal, decimal vat, decimal deliveryfee, decimal grandTot) {
-            return base.Channel.createInvoiceAsync(userID, addressID, subtotal, vat, deliveryfee, grandTot);
         }
         
         public DustCollectorsPresentation.ServiceReference1.UserSessionDetails GetUserSessionDetails(string email, string password) {

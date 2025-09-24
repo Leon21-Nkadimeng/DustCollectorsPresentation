@@ -186,7 +186,7 @@ namespace DustCollectorsPresentation
             {
                 decimal shipping = (grandTotal > 900) ? 0 : 200;
                 grandTotal += shipping;
-                lblSelectAddress.Text = client.createInvoice(userId, int.Parse(addresses.SelectedValue.ToString()), total, vat, shipping, grandTotal).ToString();
+                lblSelectAddress.Text = client.createInvoice(userId, total, vat, shipping, grandTotal).ToString();
                 dynamic prods = client.getCartProducts(userId);
                 lblSelectAddress.Text += " " + client.updateQTYS(prods);
                 lblSelectAddress.Text += " " + client.deleteCartItems(userId);
