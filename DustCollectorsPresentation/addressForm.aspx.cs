@@ -44,7 +44,7 @@ namespace DustCollectorsPresentation
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            bool isInserted = client.InsertAddress(new CustomerAddressInsert()
+            bool isInserted = client.InsertAddress(new CustomerAddress()
             {
                 RecipientName = txtRecipientName.Text,
                 RecipientPhone = txtRecipientPhone.Text,

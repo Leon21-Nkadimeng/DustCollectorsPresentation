@@ -27,10 +27,6 @@ namespace DustCollectorsPresentation
             {
                 lblRegisterStatus.Text = "Invalid South African Phone Number";
             }
-            else if (!InputValidator.isValidEmail(txtEmail.Text.Trim()))
-            {
-                lblRegisterStatus.Text = "Invalid Email Address";
-            }
             else if (!txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
                 lblRegisterStatus.Text = "Cannot Register Account: Passwords do not match";

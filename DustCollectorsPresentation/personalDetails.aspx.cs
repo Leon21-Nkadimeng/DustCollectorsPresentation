@@ -15,22 +15,25 @@ namespace DustCollectorsPresentation
         {
             if (Session["SessionID"] != null && Session["UserID"] != null && Session["Username"] != null && Session["UserType"] != null)
             {
-                UserPersonalDetails user = null;
-                try
+                if (!IsPostBack)
                 {
-                    user = client.GetUserDetails(int.Parse(Session["UserID"].ToString()));
-                    txtFirstName.Text = user.FirstName;
-                    txtLastName.Text = user.LastName;
-                    txtPhoneNumber.Text = user.PhoneNumber;
-                    txtEmailAddress.Text = user.EmailAddress;
-                }
-                catch (FormatException ex1)
-                {
-                    Response.Redirect("accountDashboard.aspx");
-                }
-                catch (NullReferenceException ex)
-                {
-                    Response.Redirect("accountDashboard.aspx");
+                    UserPersonalDetails user = null;
+                    try
+                    {
+                        user = client.GetUserDetails(int.Parse(Session["UserID"].ToString()));
+                        txtFirstName.Text = user.FirstName;
+                        txtLastName.Text = user.LastName;
+                        txtPhoneNumber.Text = user.PhoneNumber;
+                        txtEmailAddress.Text = user.EmailAddress;
+                    }
+                    catch (FormatException ex1)
+                    {
+                        Response.Redirect("accountDashboard.aspx");
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        Response.Redirect("accountDashboard.aspx");
+                    }
                 }
                 
 
@@ -38,6 +41,25 @@ namespace DustCollectorsPresentation
             {
                 Response.Redirect("accountDashboard.aspx");
             }
+        }
+
+        protected void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            UserPersonalDetails user = new UserPersonalDetails()
+            {
+                ID = int.Parse(Session["UserID"].ToString()),
+                FirstName = txtFirstName.Text,
+                LastName= txtLastName.Text,
+                PhoneNumber= txtPhoneNumber.Text,
+                EmailAddress = txtEmailAddress.Text
+        };
+            if (client.updateUserPersonalDetails(user))
+            {
+                Session["UserName"] = user.FirstName;
+                lblStatus.Text = "Personal Details Successfully Updated";
+            }
+            else
+                lblStatus.Text = "Could Not Update Personal Details";
         }
     }
 }

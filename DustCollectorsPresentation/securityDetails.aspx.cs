@@ -15,6 +15,8 @@ namespace DustCollectorsPresentation
         {
             if (Session["SessionID"] != null && Session["UserID"] != null && Session["Username"] != null && Session["UserType"] != null)
             {
+               
+
             }
             else
             {
@@ -27,11 +29,19 @@ namespace DustCollectorsPresentation
             try
             {
                 string password = client.GetUserPassword(int.Parse(Session["UserID"].ToString()));
+                
                 if(Secrecy.HashPassword(txtCurrentPassword.Text).Equals(password))
                 {
-                    if (txtCurrentPassword.Text.Equals(txtConfirmNewPassword.Text))
-                    { 
-
+                    if (txtNewPassword.Text.Equals(txtConfirmNewPassword.Text))
+                    {
+                        if (client.updateUserPassword(int.Parse(Session["UserID"].ToString()), HashPass.Secrecy.HashPassword(txtNewPassword.Text)))
+                        {
+                            lblStatus.Text = "Password updated successfully";
+                        } 
+                        else
+                        {
+                            lblStatus.Text = "Could not update password";
+                        }
                     } else {
                         lblStatus.Text = "New Passwords do not match";
                     }

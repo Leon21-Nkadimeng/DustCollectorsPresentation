@@ -87,6 +87,42 @@ namespace DustCollectorsPresentation
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl adminMenuDesktop;
 
         /// <summary>
+        /// cartDesktop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartDesktop;
+
+        /// <summary>
+        /// wishlistDesktop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor wishlistDesktop;
+
+        /// <summary>
+        /// cartMobile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartMobile;
+
+        /// <summary>
+        /// wishlistMobile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor wishlistMobile;
+
+        /// <summary>
         /// userGreetingResponsive control.
         /// </summary>
         /// <remarks>

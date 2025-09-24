@@ -3,47 +3,6 @@
     <title>My Account</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<!--
-   <div class="row">
-	<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Categories
-					</h4>
-					<div class="=p-t-55">
-					<ul>
-						<li class="bor18">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
-
-						<li class="bor18">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
-
-						<li class="bor18">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
-
-						<li class="bor18">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
-						</div>
-				</div>
-			</div>
-		</div>
-
-	   </div>
-	-->
 		<section class="bg0 p-t-104 p-b-116" id="details" runat="server" visible="true">
 		<div class="container">
 			<div class="flex-w flex-tr">

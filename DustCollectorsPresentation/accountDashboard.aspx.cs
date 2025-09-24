@@ -13,7 +13,11 @@ namespace DustCollectorsPresentation
         {
             if (Session["SessionID"] != null && Session["UserID"] != null && Session["Username"] != null && Session["UserType"] != null)
             {
-
+                if(Session["userType"].Equals("admin"))
+                {
+                    customerOrders.Visible = false;
+                    customerAddressBook.Visible = false;
+                }
             }
             else
             {

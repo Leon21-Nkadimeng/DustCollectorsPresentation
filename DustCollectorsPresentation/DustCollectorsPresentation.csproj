@@ -43,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -72,14 +73,62 @@
   <ItemGroup>
     <Content Include="aboutProduct.aspx" />
     <Content Include="accountDashboard.aspx" />
+    <Content Include="addAdmin.aspx" />
     <Content Include="addressForm.aspx" />
+    <Content Include="brands.aspx" />
+    <Content Include="Cart.aspx" />
+    <Content Include="charts.aspx" />
+    <Content Include="checkout.html" />
+    <Content Include="colourways.aspx" />
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.BrandDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.CategoryDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.ColourwayDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.CustomerAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.GenderDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.SysUserDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.UserPersonalDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.UserSessionDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.ProductSizeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.DisplayProdCatalog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.ProdForTblManagement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.ProductDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.ProductDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.RegisteredUsers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.MonthlyUsers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.AnnualUserRegistrations.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\DustCollectorsPresentation.ServiceReference1.CartProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\Service1.disco" />
@@ -90,13 +139,17 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="deliveryAddresses.aspx" />
+    <Content Include="editProduct.aspx" />
+    <Content Include="genders.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="brandForm.aspx" />
     <Content Include="insertProduct.aspx" />
     <Content Include="login.aspx" />
     <Content Include="personalDetails.aspx" />
+    <Content Include="inventory.aspx" />
     <Content Include="register.aspx" />
     <Content Include="securityDetails.aspx" />
-    <Content Include="shoeVariantForm.aspx" />
+    <Content Include="userManagement.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,12 +167,47 @@
     <Compile Include="accountDashboard.aspx.designer.cs">
       <DependentUpon>accountDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="addAdmin.aspx.cs">
+      <DependentUpon>addAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addAdmin.aspx.designer.cs">
+      <DependentUpon>addAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="addressForm.aspx.cs">
       <DependentUpon>addressForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="addressForm.aspx.designer.cs">
       <DependentUpon>addressForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="brands.aspx.cs">
+      <DependentUpon>brands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="brands.aspx.designer.cs">
+      <DependentUpon>brands.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="charts.aspx.cs">
+      <DependentUpon>charts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="charts.aspx.designer.cs">
+      <DependentUpon>charts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="colourways.aspx.cs">
+      <DependentUpon>colourways.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="colourways.aspx.designer.cs">
+      <DependentUpon>colourways.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -133,6 +221,20 @@
     <Compile Include="deliveryAddresses.aspx.designer.cs">
       <DependentUpon>deliveryAddresses.aspx</DependentUpon>
     </Compile>
+    <Compile Include="editProduct.aspx.cs">
+      <DependentUpon>editProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editProduct.aspx.designer.cs">
+      <DependentUpon>editProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="genders.aspx.cs">
+      <DependentUpon>genders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="genders.aspx.designer.cs">
+      <DependentUpon>genders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,6 +243,13 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="InputValidator.cs" />
+    <Compile Include="brandForm.aspx.cs">
+      <DependentUpon>brandForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="brandForm.aspx.designer.cs">
+      <DependentUpon>brandForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="insertProduct.aspx.cs">
       <DependentUpon>insertProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,6 +278,13 @@
     <Compile Include="personalDetails.aspx.designer.cs">
       <DependentUpon>personalDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="inventory.aspx.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inventory.aspx.designer.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -185,12 +301,12 @@
     <Compile Include="securityDetails.aspx.designer.cs">
       <DependentUpon>securityDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="shoeVariantForm.aspx.cs">
-      <DependentUpon>shoeVariantForm.aspx</DependentUpon>
+    <Compile Include="userManagement.aspx.cs">
+      <DependentUpon>userManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="shoeVariantForm.aspx.designer.cs">
-      <DependentUpon>shoeVariantForm.aspx</DependentUpon>
+    <Compile Include="userManagement.aspx.designer.cs">
+      <DependentUpon>userManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\GenderEnum.cs" />
   </ItemGroup>
@@ -207,6 +323,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service14.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

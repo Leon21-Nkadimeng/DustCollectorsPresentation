@@ -11,88 +11,79 @@ namespace DustCollectorsPresentation
 {
 
 
-    public partial class shoeVariantForm
+    public partial class Cart
     {
 
         /// <summary>
-        /// DropDownList2 control.
+        /// cartTbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Table cartTbl;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// tblHeaderRow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.TableHeaderRow tblHeaderRow;
 
         /// <summary>
-        /// TextBox1 control.
+        /// subtotalSpan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subtotalSpan;
 
         /// <summary>
-        /// TextBox2 control.
+        /// VATSpan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl VATSpan;
 
         /// <summary>
-        /// TextBox3 control.
+        /// grandTotalSpan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl grandTotalSpan;
 
         /// <summary>
-        /// CheckBox1 control.
+        /// addresses control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.DropDownList addresses;
 
         /// <summary>
-        /// shoe_variants_table control.
+        /// lblSelectAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl shoe_variants_table;
+        protected global::System.Web.UI.WebControls.Label lblSelectAddress;
 
         /// <summary>
-        /// Button2 control.
+        /// btnCheckout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-
-        /// <summary>
-        /// linkToEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkToEdit;
+        protected global::System.Web.UI.WebControls.Button btnCheckout;
     }
 }

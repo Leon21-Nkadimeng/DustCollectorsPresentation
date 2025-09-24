@@ -30,7 +30,7 @@
 							<!--<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">-->
 						</div>
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:Label ID="lblStatus" runat="server" Text="" style="color:red;"></asp:Label>
+							<asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 						</div>
 				
 						<asp:Button ID="btnSaveChanges" runat="server" Text="Save Changes" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" OnClick="btnSaveChanges_Click" />

@@ -27,6 +27,8 @@ namespace DustCollectorsPresentation
                     linkToRegisterResponsive.Visible = true;
                     logoutLink.Visible = false;
                     logoutLinkResponsive.Visible = false;
+                    cartDesktop.Visible = false;
+                    cartMobile.Visible = false;
                 }
                 else if (Session["UserType"].Equals("customer"))
                 {
@@ -41,6 +43,25 @@ namespace DustCollectorsPresentation
                     linkToRegisterResponsive.Visible = false;
                     logoutLink.Visible = true;
                     logoutLinkResponsive.Visible = true;
+                    cartDesktop.Visible = true;
+                    cartMobile.Visible = true;
+                } else if (Session["UserType"].Equals("admin"))
+                {
+                    userGreeting.Visible = true;
+                    userGreeting.InnerHtml = "<span style='color: white;'> Hi " + Session["Username"] + "</span>";
+                    userGreetingResponsive.InnerHtml += userGreeting.InnerHtml;
+                    linkToAccountDashboard.Visible = true;
+                    linkToAccountDashboardResponsive.Visible = true;
+                    linkToLogin.Visible = false;
+                    linkToLoginResponsive.Visible = false;
+                    linkToRegister.Visible = false;
+                    linkToRegisterResponsive.Visible = false;
+                    logoutLink.Visible = true;
+                    logoutLinkResponsive.Visible = true;
+                    customerMenuDesktop.Visible = false;
+                    customerMenuMobile.Visible = false;
+                    adminMenuDesktop.Visible = true;
+                    adminMenuMobile.Visible = true;
                 }
             }
         }
