@@ -25,9 +25,10 @@
 			</div>
 			<div clas5s="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-c-m m-tb-10">
-					<span>Sort By: </span>Availability<asp:DropDownList ID="availability" AutoPostBack="true" runat="server" OnSelectedIndexChanged="availability_SelectedIndexChanged">
+					<span>Sort By Availability</span>
+					<asp:DropDownList ID="availability" AutoPostBack="true" runat="server" OnSelectedIndexChanged="availability_SelectedIndexChanged">
 									
-					              </asp:DropDownList>
+					</asp:DropDownList>
 				</div>
 
 				<div class="flex-w flex-c-m m-tb-10">

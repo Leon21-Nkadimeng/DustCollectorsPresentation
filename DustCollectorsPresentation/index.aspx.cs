@@ -229,7 +229,7 @@ namespace DustCollectorsPresentation
 					product_section.InnerHtml += "<div class='col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women'>";
 					product_section.InnerHtml += "<!-- Block2 -->";
 					product_section.InnerHtml += "<div class='block2'>";
-					product_section.InnerHtml += "<div class='block2-pic hov-img0'>";
+					product_section.InnerHtml += "<div class='block2-pic hov-img0' style='height:200px;'>";
 					product_section.InnerHtml += "<img src='" + shoe.mainImageURL + "' alt='" + shoe.BrandName + " " + shoe.Name + "'>";
 
 

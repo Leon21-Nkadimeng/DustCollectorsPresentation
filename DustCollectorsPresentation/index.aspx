@@ -120,7 +120,7 @@
 				</div>
 			</div>
 
-			<div class="row isotope-grid" id="product_section" runat="server" style="position: relative; height: 4595.77px;">
+			<div class="row isotope-grid" id="product_section" runat="server" style="position: relative;">
 	
 			</div>
 		</div>
